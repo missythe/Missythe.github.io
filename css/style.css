@@ -87,15 +87,6 @@ body::before{
     border:0px solid #fff;
     border-radius: 15px;
 }
-.idcard{
-    float: right;
-    margin-top: -30px;
-    margin-right: 100px;
-}
-.idcard > img{
-    width: 30px;
-    height: 26px;
-}
 .zan{
     position: relative;
     display: inline;
