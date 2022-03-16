@@ -10,3 +10,20 @@ function playMusic() {
     $("#music").click(function(){
       play();
     });
+
+    var player = document.getElementById("audio");
+    play();
+    function play(){
+    swal("欢迎浏览主页\n请问是否开启音乐\n一边浏览一边听呢？", {
+            buttons: {
+                cancel: "开启",
+                allow: "关闭"
+            }
+        }).then(function(value) {
+            if (value == "allow") {
+                player.pause()
+            } else {
+                player.play();
+            }
+        });
+    }
