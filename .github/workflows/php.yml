@@ -1,0 +1,26 @@
+name: PHP Worker
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+    php:
+        name: PHP ${{ matrix.php }} Tests
+        runs-on: ubuntu-latest
+        strategy:
+           fail-fast: false
+           matrix:
+               php: ['7.2', '7.3', '7.4', '8.0']
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v2
+          - name: Setup PHP only
+            uses: shivammathur/setup-php@v2
+            with:
+                 php-version: ${{ matrix.php }}
+          - name: Test
+            run: | 
+                 find . -type f -name '*.php' -print0 | xargs -0 -n1 -P4 php -l -n | (! grep -v "No syntax errors detected" )
