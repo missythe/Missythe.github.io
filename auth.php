@@ -7,7 +7,7 @@
 * @version : 1.0.2
 */
 require 'class/GithubApi.php';
-$config = array( 'client_id' => 'acf033e585648b1d8c0b', 'client_secret' => '3f1bc7ac79e509064ac7050216e536167a4c3bde', 'https_open' => false );
+$config = array( 'client_id' => 'acf033e585648b1d8c0b', 'client_secret' => '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', 'https_open' => false );
 
 function generate_html( $html_tittle, $redirect_url ) {
     return "<html><head><meta charset='UTF-8'><title>" . $html_tittle . "</title></head><body><h1>请等待系统处理...</h1><script>function goTo(url){window.location.href=url;}setTimeout('goTo(\"" . $redirect_url . "\")',5000);</script></body></html>";
